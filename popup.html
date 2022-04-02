@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <title>Scraper</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>Scrape</h1>
+
+        <div class="commands-list">
+            <div class="command-item">
+                <select>
+                    <option value="wait">Wait</option>
+                    <option value="click">Click</option>
+                    <option value="enter">Write</option>
+                    <option value="save">Read</option>
+                </select>
+                <input class="value-1" placeholder="200ms"/>
+                <input class="value-2" placeholder="Optional"/>
+            </div>
+        </div>
+        <div class="action-buttons">
+            <button class="new-command">Add Command</button>
+            <button class="run-command">Run</button>
+        </div>
+        <textarea style="display:none;"></textarea>
+        <script src="popup.js"></script>
+    </body>
+</html>

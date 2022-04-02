@@ -1,0 +1,16 @@
+{
+    "name": "Web Scraper",
+    "version": "0.01",
+    "description": "Web Scraper",
+    "permissions": ["activeTab"],
+    "action": {
+        "default_title": "Simple Scraper",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [{
+        "matches": ["<all_urls>"],
+        "js": ["contentScript.js"],
+        "run_at": "document_end"
+    }],
+    "manifest_version": 3
+}
