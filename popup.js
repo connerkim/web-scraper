@@ -1,12 +1,13 @@
+// verifies that commands have run
 chrome.runtime.onMessage.addListener((msg, sender, response) =>{
     if (msg.command == 'run-complete') {
-        alert("hey");
         document.querySelector('textarea').value = JSON.stringify(msg.data);
         document.querySelector('textarea').style.display='block';
         alert('commands have been run');
     }
 });
 
+// run command objects when run is pressed
 function createCommandObject() {
 
     var commandsArr = [];
@@ -31,11 +32,12 @@ function createCommandObject() {
     });
 }
 
-
+// run command objects when run is pressed
 document.querySelector('.run-command').addEventListener('click', function() {
     createCommandObject();
 });
 
+// create new command option when new command is pressed
 document.querySelector('.new-command').addEventListener('click', function() {
     var newItem = `<div class="command-item">
         <select>
