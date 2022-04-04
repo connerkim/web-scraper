@@ -10,6 +10,7 @@ chrome.runtime.onMessage.addListener((msg, sender, response) => {
 
 });
 
+// gets new item function, calls respective function
 function getNextItem(obj, index) {
     if (typeof obj[index] !== 'undefined') {
         if (obj[index].type == 'click') {
@@ -30,6 +31,7 @@ function getNextItem(obj, index) {
     }
 }
 
+// pause for x milliseconds
 function waitEvent(obj, index) {
     var item = obj[index];
     var waitTime = parseInt(item.one);
@@ -39,12 +41,14 @@ function waitEvent(obj, index) {
 
 }
 
+// click an item on the page
 function clickEvent(obj, index) {
     var item = obj[index];
     document.querySelector(item.one).click();
     getNextItem(obj, (index+1));
 }
 
+// get text from page
 function saveEvent(obj, index) {
     var item = obj[index];
     var value = document.querySelector(item.one).innerText;
@@ -52,6 +56,7 @@ function saveEvent(obj, index) {
     getNextItem(obj, (index+1));
 }
 
+// write text to page
 function enterEvent(obj, index) {
     var item = obj[index];
     var value = document.querySelector(item.one).innerText = item.two;
